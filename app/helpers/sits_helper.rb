@@ -4,12 +4,12 @@ module SitsHelper
 		if search
 			excerpt = excerpt(stripped, search, radius: 200)
 			if !excerpt.blank?
-				return highlight(excerpt, search)
+				return highlight(excerpt, search, :escape => false)
 			else
-				return truncate(stripped, :length => length, :omission => " ...")
+				return truncate(stripped, :length => length, :omission => " ...", :escape => false)
 			end
 		end
-		return truncate(stripped, :length => length, :omission => " ...")
+		return truncate(stripped, :length => length, :omission => " ...", :escape => false)
 	end
 
 	def teaser_title(sit, type = false)
