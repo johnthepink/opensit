@@ -28,4 +28,9 @@ class UserMailer < ActionMailer::Base
     @email = user.email
     mail(to: @email, subject: 'Meditate with people from around the globe!') if user.email
   end
+
+  def opensit_survey(user)
+    @email = user.email
+    mail(to: @email, subject: 'OpenSit is changing... what do you think?') if user.email
+  end
 end

@@ -202,6 +202,8 @@ GEM
     json (1.8.1)
     launchy (2.4.3)
       addressable (~> 2.3)
+    letter_opener (1.4.1)
+      launchy (~> 2.2)
     libv8 (3.16.14.7)
     listen (2.8.4)
       celluloid (>= 0.15.2)
@@ -442,6 +444,7 @@ DEPENDENCIES
   jquery-rails (= 2.3.0)
   jquery-turbolinks
   launchy
+  letter_opener
   meta_request (= 0.2.6)
   mini_magick
   momentjs-rails (~> 2.5.0)

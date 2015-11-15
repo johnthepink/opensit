@@ -29,6 +29,7 @@ group :development, :test do
   gem 'guard-livereload' # Sends signal to Livereload extension in browser to reload page
   gem 'guard-migrate' # Automatically runs migrations when needed
   gem 'terminal-notifier-guard', require: false
+  gem 'letter_opener'
 end
 
 # Previously assets group
