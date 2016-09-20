@@ -184,6 +184,7 @@ GEM
     hike (1.2.3)
     hirb (0.7.2)
     hitimes (1.2.2)
+    honeypot-captcha (0.0.3)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     jquery-rails (2.3.0)
@@ -423,6 +424,7 @@ DEPENDENCIES
   guard-migrate
   guard-rails
   guard-rspec
+  honeypot-captcha
   jazz_hands!
   jquery-rails (= 2.3.0)
   jquery-turbolinks
