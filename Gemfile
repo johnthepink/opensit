@@ -83,10 +83,6 @@ gem 'will_paginate-bootstrap'
 gem 'newrelic_rpm'
 gem 'airbrake'
 
-# Deploy with Capistrano
-gem 'capistrano'
-gem 'rvm-capistrano'
-
 # Heroku assets and logging
 gem 'rails_12factor', group: :production
 
