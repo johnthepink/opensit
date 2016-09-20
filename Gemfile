@@ -88,3 +88,6 @@ gem 'rails_12factor', group: :production
 
 # loading bar
 gem 'nprogress-rails'
+
+# Spam protection
+gem 'rakismet'

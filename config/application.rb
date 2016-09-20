@@ -82,5 +82,8 @@ module Opensit
     config.to_prepare do
       Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "sign_up" }
     end
+
+    config.rakismet.key = '0f50d698ebf4'
+    config.rakismet.url = 'http://opensit.com/'
   end
 end
