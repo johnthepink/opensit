@@ -3,10 +3,12 @@ task :prune_spam => :environment do
   total = 0
   User.all.each do |u|
     Blacklist::EMAIL_PATTERNS.each do |pattern|
-      if u.email =~ pattern
-        u.destroy
-        p "#{total}. Account deleted: #{u.email} | #{u.username}"
-        total += 1
+      if (u.website =~ pattern) || (u.email =~ pattern)
+        if (u.sits.size == 0)
+          u.destroy
+          p "#{total}. #{u.username} deleted: #{u.email} | #{u.website}"
+          total += 1
+        end
       end
     end
   end
