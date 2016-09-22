@@ -21,6 +21,21 @@ describe 'Users' do
     should have_content "Welcome to our community!"
   end
 
+  it 'blocks blacklisted emails' do
+    visit new_user_registration_path
+    fill_in "user_username", with: "newbie"
+    fill_in "user_email", with: "dan@checkbesthosting.com"
+    fill_in "user_password", with: "gunsbitchesbling"
+
+    within(".new_user") do
+      find_button("Sign up").trigger('click')
+    end
+
+    sleep(1)
+
+    expect(page.body).to include("Registration blocked")
+  end
+
   describe 'registered users' do
 
     it 'should be able to log in' do
