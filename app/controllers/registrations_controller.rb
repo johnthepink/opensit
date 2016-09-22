@@ -2,9 +2,6 @@
 
 class RegistrationsController < Devise::RegistrationsController
 
-  BLACKLIST = [/checkbesthosting/, /.pl$/, /gmail4u/, /steroid/, /e.90.biz$/, /weight-loss/, /slimming/,
-    /breast/, /men-muscle/, /silkwomenshirts/, /penis/, /.xyz$/, /.date$/]
-
   def after_sign_up_path_for(resource)
     '/welcome'
   end
@@ -32,7 +29,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     if params[:user] && params[:user][:email]
-      BLACKLIST.each do |pattern|
+      Blacklist::EMAIL_PATTERNS.each do |pattern|
         if params[:user][:email] =~ pattern
           flash[:error] = "Registration blocked, abuse reported! If you think this is in error, please contact hello@opensit.com"
           Rails.logger.error("Registration blocked via blacklist! #{params[:user][:email]}")
