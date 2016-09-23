@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
     :author_email => :email,
     :author_url => :website,
     :content => :who,
-    :user_ip => :last_sign_in_ip
+    :user_ip => :current_sign_in_ip
 
   attr_accessible :city, :country, :website, :default_sit_length, :dob,
                   :password, :email, :first_name, :gender, :last_name,
