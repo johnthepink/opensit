@@ -6,7 +6,7 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    it { should have_selector('h1',    text: 'Where meditators meet.') }
+    it { should have_selector('h1',    text: 'Your beautiful, free meditation journal') }
   end
 
   describe "About page" do
