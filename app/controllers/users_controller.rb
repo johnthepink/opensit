@@ -76,8 +76,8 @@ class UsersController < ApplicationController
       end
     end
 
-    @title = "#{@user.display_name}\'s meditation practice journal"
-    @desc = "#{@user.display_name} has logged #{@user.sits_count} meditation reports on OpenSit, a free community for meditators."
+    @title = "#{@user.display_name}\'s meditation journal"
+    @desc = "#{@user.display_name}\'s meditation journal has #{@user.sits_count} entries on OpenSit, a free online meditation community."
     @page_class = 'view-user'
   end
 
