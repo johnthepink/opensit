@@ -89,4 +89,8 @@ gem 'rails_12factor', group: :production
 # loading bar
 gem 'nprogress-rails'
 
+# Prevent automated bots signing up
 gem 'honeypot-captcha'
+
+# Spam protection
+gem 'rakismet'

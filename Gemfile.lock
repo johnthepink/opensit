@@ -305,6 +305,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    rakismet (1.5.3)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -446,6 +447,7 @@ DEPENDENCIES
   rack
   rails (= 4.2)
   rails_12factor
+  rakismet
   rb-fsevent
   rb-inotify (~> 0.9)
   rspec-collection_matchers

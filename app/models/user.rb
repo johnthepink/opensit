@@ -1,6 +1,14 @@
 require 'textacular/searchable'
 
 class User < ActiveRecord::Base
+  # Spam
+  include Rakismet::Model
+  rakismet_attrs :author => :username,
+    :author_email => :email,
+    :author_url => :website,
+    :content => :who,
+    :user_ip => :current_sign_in_ip
+
   attr_accessible :city, :country, :website, :default_sit_length, :dob,
                   :password, :email, :first_name, :gender, :last_name,
                   :practice, :private_diary, :style, :user_type, :username,
