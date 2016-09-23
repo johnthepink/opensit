@@ -94,3 +94,5 @@ gem 'honeypot-captcha'
 
 # Spam protection
 gem 'rakismet'
+
+gem 'colorize'
