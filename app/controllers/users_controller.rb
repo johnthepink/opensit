@@ -145,7 +145,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if current_user && current_user.username.in?(User::MODERATORS)
+    if current_user && current_user.username.in?(User::MODERATOR_USERNAMES)
       @user = User.where("lower(username) = lower(?)", params[:username]).first!
 
       if @user.destroy
