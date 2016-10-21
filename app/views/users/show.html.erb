@@ -103,6 +103,12 @@
           <% end %>
         </div>
       <% end %>
+
+      <% if current_user && current_user.username.in?(User::MODERATORS) %>
+        <div class='mod-delete-user'>
+          <%= link_to 'Delete this user?', user_path(@user), method: :delete, data: { confirm: 'Delete this user?' }, class: 'delete-user' %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

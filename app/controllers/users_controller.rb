@@ -144,6 +144,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if current_user && current_user.username.in?(User::MODERATORS)
+      @user = User.where("lower(username) = lower(?)", params[:username]).first!
+
+      if @user.destroy
+        redirect_to '/explore/users/new', notice: 'User deleted. Thanks for fighting the good fight 💪'
+      else
+        redirect_to explore_path, notice: 'Something went wrong :('
+      end
+    end
+  end
+
   private
 
     # Validate year and month params on user page

@@ -61,6 +61,8 @@ class User < ActiveRecord::Base
   scope :newest_first, -> { order("created_at DESC") }
   scope :communal, -> { where(private: false) }
 
+  MODERATOR_USERNAMES = ['danbartlett', 'Bluemoon', 'WhipWhompnWhoopWhoop']
+
   # Used by url_helper to determine user path, eg; /buddha and /user/buddha
   def to_param
     username

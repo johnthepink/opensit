@@ -11,6 +11,7 @@ Opensit::Application.routes.draw do
     get '/u/:username/followers' => "users#followers", :as => :followers_user
     get '/u/:username/export' => "users#export"
     get '/u/:username/feed' => "users#feed", :as => :feed, :defaults => { :format => 'atom' }
+    delete '/u/:username' => "users#destroy", :as => :delete_user
   end
 
   get '/favs' => "favourites#index", :as => :favs

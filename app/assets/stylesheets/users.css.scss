@@ -505,3 +505,16 @@
     padding-top: 3px;
   }
 }
+
+// Delete user link for moderators
+.mod-delete-user {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 0.8em;
+  a {
+    opacity: 0.6;
+    color: red;
+  }
+}
