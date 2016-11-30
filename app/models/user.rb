@@ -181,7 +181,7 @@ class User < ActiveRecord::Base
 
   def time_sat_on_date(date)
     total_time = 0
-    sits.where(created_at: date.beginning_of_day..date.end_of_day).each do |s|
+    sits.where(s_type: 0, created_at: date.beginning_of_day..date.end_of_day).each do |s|
       total_time += s.duration
     end
     total_time
