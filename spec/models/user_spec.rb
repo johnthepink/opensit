@@ -288,6 +288,20 @@ describe User do
       end
     end
 
+    describe "#total_hours_sat" do
+      it 'returns total hours sat' do
+        2.times do
+          create(:sit, created_at: Date.today, user: buddha, duration: 60)
+        end
+        expect(buddha.total_hours_sat).to eq(2)
+      end
+      it 'does not count diary entries' do
+        create(:sit, created_at: Date.today, user: buddha, duration: 60)
+        create(:sit, created_at: Date.today, user: buddha, duration: 60, s_type: 1, title: Faker::Lorem.word)
+        expect(buddha.total_hours_sat).to eq(1)
+      end
+    end
+
     describe "#sat_for_x_on_date?" do
       before do
         create(:sit, created_at: Date.yesterday, user: buddha, duration: 30)

@@ -188,7 +188,7 @@ class User < ActiveRecord::Base
   end
 
   def total_hours_sat
-    sits.sum(:duration) / 60
+    sits.where(s_type: 0).sum(:duration) / 60
   end
 
   # Returns list of months a user has sat, and sitting totals for each month
