@@ -333,6 +333,12 @@ describe User do
 
         expect(buddha.days_sat_for_min_x_minutes_in_date_range(30, Date.today, Date.today)).to eq 1
       end
+
+      it 'does not count diary entries' do
+        create(:sit, created_at: Date.today, user: buddha, duration: 30)
+        create(:sit, created_at: Date.today - 1, user: buddha, duration: 30, s_type: 1, title: Faker::Lorem.word)
+        expect(buddha.days_sat_for_min_x_minutes_in_date_range(30, Date.today - 2, Date.today)).to eq 1
+      end
     end
 
     describe "#journal_range" do
